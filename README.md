@@ -1,18 +1,58 @@
-## Getting Started
+# Virtual Art Gallery
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+A simple Virtual Art Gallery system built in Java, designed to manage artworks, galleries, and user favorites. It provides functionality for adding, viewing, updating, and removing artworks, managing galleries, and maintaining a list of favorite artworks for users using a menu-driven interface.
 
-## Folder Structure
+## Features
+- **Add New Artwork**: Add details of a new artwork to the gallery.
+- **Update Artwork**: Modify details of existing artworks.
+- **Remove Artwork**: Delete artworks from the gallery.
+- **Get Artwork by ID**: Retrieve details of a specific artwork using its ID.
+- **Search Artworks**: Search artworks based on keywords (title, description, medium).
+- **Add Artwork to User Favorites**: Mark artworks as favorites for a user.
+- **Remove Artwork from User Favorites**: Unmark artworks from a user's favorites.
+- **Get User Favorite Artworks**: Retrieve the list of favorite artworks for a specific user.
 
-The workspace contains two folders by default, where:
+## Prerequisites
+- **Java 8+**: Make sure Java is installed and added to your system's PATH.
+- **MySQL**: Set up a MySQL server to host the virtual art gallery database.
+- **MySQL Connector and Junit**: Ensure `mysql-connector-java` and `junit 4.13.2` is added to your pom.xml dependency.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Setup
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/kishlaykiku/Virtual-Art-Gallery.git
+   cd 'Virtual-Art-Gallery'
+   ```
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+2. **Set Up Database**
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+    ```bash
+    Execute the SQL scripts in the /sql folder:
+    CreateSchema.sql to create tables.
+    InsertData.sql to insert sample data.
+    ```
 
-## Dependency Management
+3. **Configure Database Connection**
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+    ```bash
+    hostname = localhost
+    port = 3306
+    dbname = hospital_db
+    username = your_username
+    password = your_password
+    ```
+
+4. Compile and Run the Project
+
+    ```bash
+    javac src/main/MainModule.java
+    java src/main/MainModule
+    ```
+
+4. If using Maven, you can run JUnit tests with
+
+    ```bash
+    mvn test
+    ```
+<hr>
+<hr>

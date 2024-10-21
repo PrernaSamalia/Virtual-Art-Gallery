@@ -5,36 +5,56 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import util.DBConnUtil;
-
 import java.time.LocalTime;
 import java.util.List;
-
 import static org.junit.Assert.*;
 
+/**
+ * JUnit test class for testing the Gallery management functionalities
+ * in the VirtualArtGalleryImpl class.
+*/
 public class VirtualArtGalleryImplGalleryTest {
 
     private VirtualArtGalleryImpl galleryService;
 
+    /**
+     * Setup method to initialize the VirtualArtGalleryImpl instance
+     * before each test is executed.
+    */
     @Before
     public void setUp() {
         galleryService = new VirtualArtGalleryImpl();
     }
 
+    /**
+     * Tear down method to close the database connection
+     * after all tests are completed.
+    */
     @After
     public void tearDown() {
-        // Close the database connection after all tests are run
+        
         DBConnUtil.dbClose();
     }
 
+    /**
+     * Test case to verify adding a new gallery to the system.
+     * Ensures that the gallery is added successfully.
+    */
     @Test
     public void testAddGallery() {
+
         Gallery newGallery = new Gallery("Modern Art Gallery", "A gallery for modern art lovers", "New York", 1, LocalTime.of(9, 0));
         boolean result = galleryService.addGallery(newGallery);
         assertTrue("Gallery should be added successfully", result);
     }
 
+    /**
+     * Test case to verify updating an existing gallery's details.
+     * Ensures that changes are correctly saved.
+    */
     @Test
     public void testUpdateGallery() {
+
         // Add a new gallery to update later
         Gallery newGallery = new Gallery("Contemporary Art Gallery", "For contemporary art enthusiasts", "San Francisco", 2, LocalTime.of(10, 0));
         galleryService.addGallery(newGallery);
@@ -57,8 +77,13 @@ public class VirtualArtGalleryImplGalleryTest {
         assertEquals("Updated description for contemporary art.", updatedGallery.getDescription());
     }
 
+    /**
+     * Test case to verify removing a gallery from the system.
+     * Ensures that the gallery is successfully deleted.
+    */
     @Test
     public void testRemoveGallery() {
+
         // Add a new gallery to remove later
         Gallery newGallery = new Gallery("Temporary Gallery", "A gallery to be deleted", "Los Angeles", 3, LocalTime.of(11, 0));
         galleryService.addGallery(newGallery);
@@ -75,8 +100,13 @@ public class VirtualArtGalleryImplGalleryTest {
         assertNull("Deleted gallery should not be found", deletedGallery);
     }
 
+    /**
+     * Test case to verify searching for galleries using keywords.
+     * Tests both cases where results are expected and where no results are expected.
+    */
     @Test
     public void testSearchGalleries() {
+
         // Add a few galleries for searching
         galleryService.addGallery(new Gallery("Sunrise Gallery", "Gallery focusing on morning landscapes", "Chicago", 4, LocalTime.of(8, 30)));
         galleryService.addGallery(new Gallery("Nightfall Gallery", "Gallery focusing on night scenes", "Chicago", 4, LocalTime.of(18, 0)));

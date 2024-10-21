@@ -19,6 +19,7 @@ public class PropertyUtil {
     */
     public static String getPropertyString(String propertyFileName) {
 
+        // Create a Properties object to hold the key-value pairs from the configuration file
         Properties properties = new Properties();
 
         try (FileInputStream input = new FileInputStream(propertyFileName)) {
@@ -37,8 +38,10 @@ public class PropertyUtil {
             return "jdbc:mysql://" + hostname + ":" + port + "/" + dbname + "?user=" + username + "&password=" + password;
         }
         catch (IOException e) {
+
             e.printStackTrace();
         }
+
         return null;
     }
 }

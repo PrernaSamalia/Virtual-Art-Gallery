@@ -74,3 +74,6 @@ DROP TABLE Artwork;
 DROP TABLE Artist;
 DROP TABLE User;
 DROP TABLE Gallery;
+
+DELETE FROM Gallery
+WHERE GalleryID = 14;

@@ -25,6 +25,15 @@ public class Artwork {
         this.artistID = artistID;
     }
 
+    public Artwork(String title, String description, LocalDate creationDate, String medium, String imageURL, int artistID) {
+        this.title = title;
+        this.description = description;
+        this.creationDate = creationDate;
+        this.medium = medium;
+        this.imageURL = imageURL;
+        this.artistID = artistID;
+    }
+
     // Getters and Setters
     public int getArtworkID() {
         return artworkID;

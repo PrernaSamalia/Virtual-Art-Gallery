@@ -23,6 +23,14 @@ public class Gallery {
         this.openingHours = openingHours;
     }
 
+    public Gallery(String name, String description, String location, int curator, LocalTime openingHours) {
+        this.name = name;
+        this.description = description;
+        this.location = location;
+        this.curator = curator;
+        this.openingHours = openingHours;
+    }
+
     // Getters and Setters
     public int getGalleryID() {
         return galleryID;

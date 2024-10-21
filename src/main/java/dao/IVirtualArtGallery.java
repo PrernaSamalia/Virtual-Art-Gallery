@@ -1,6 +1,8 @@
 package dao;
 
 import entity.Artwork;
+import entity.Gallery;
+
 import java.util.List;
 import exception.myexceptions.*;
 
@@ -67,4 +69,41 @@ public interface IVirtualArtGallery {
      * @return A list of Artwork objects that the user has marked as favorites.
      */
     List<Artwork> getUserFavoriteArtworks(int userId) throws UserNotFoundException;
+
+    // Gallery Management
+
+    /**
+     * Adds a new gallery to the system.
+     * @param gallery The Gallery object to add.
+     * @return True if the operation was successful, otherwise false.
+     */
+    boolean addGallery(Gallery gallery);
+
+    /**
+     * Updates an existing gallery.
+     * @param gallery The Gallery object with updated details.
+     * @return True if the operation was successful, otherwise false.
+     */
+    boolean updateGallery(Gallery gallery);
+
+    /**
+     * Removes a gallery by its ID.
+     * @param galleryID The ID of the gallery to remove.
+     * @return True if the operation was successful, otherwise false.
+     */
+    boolean removeGallery(int galleryID);
+
+    /**
+     * Retrieves a gallery by its ID.
+     * @param galleryID The ID of the gallery.
+     * @return The Gallery object, or null if not found.
+     */
+    Gallery getGalleryById(int galleryID);
+
+    /**
+     * Searches galleries based on a keyword.
+     * @param keyword The keyword to search by (name or description).
+     * @return A list of Gallery objects matching the keyword.
+     */
+    List<Gallery> searchGalleries(String keyword);
 }

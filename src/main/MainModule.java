@@ -1,6 +1,7 @@
 package main;
 
-import dao.VirtualArtGalleryImpl;
+
+import src
 import entity.Artwork;
 import exception.myexceptions.*;
 import util.DBConnUtil;

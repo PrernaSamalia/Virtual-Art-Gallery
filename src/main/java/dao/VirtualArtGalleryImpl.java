@@ -79,6 +79,9 @@ public class VirtualArtGalleryImpl implements IVirtualArtGallery {
     public Artwork getArtworkById(int artworkID) throws ArtWorkNotFoundException {
         String query = "SELECT * FROM Artwork WHERE ArtworkID = ?";
         
+        /*Creates a PreparedStatement using the SQL query. The PreparedStatement 
+        object allows you to safely insert the values into the placeholders in the query. */
+
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
             stmt.setInt(1, artworkID);
             ResultSet rs = stmt.executeQuery();
@@ -164,7 +167,8 @@ public class VirtualArtGalleryImpl implements IVirtualArtGallery {
         }
         String query = "DELETE FROM User_Favorite_Artwork WHERE UserID = ? AND ArtworkID = ?";
         
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+        try(PreparedStatement stmt = connection.prepareStatement(query))  {
+            
             stmt.setInt(1, userId);
             stmt.setInt(2, artworkId);
             stmt.executeUpdate();
@@ -327,7 +331,7 @@ public class VirtualArtGalleryImpl implements IVirtualArtGallery {
                 );
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            e.printStackTrace(); 
         }
         return null;
     }

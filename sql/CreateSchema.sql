@@ -68,6 +68,7 @@ SELECT * FROM Artwork;
 SELECT * FROM Artist;
 SELECT * FROM User;
 SELECT * FROM Gallery;
+DELETE FROM Artwork WHERE ArtworkID= 14;
 
 DROP DATABASE IF EXISTS `virtualart`;
 DROP TABLE Artwork;

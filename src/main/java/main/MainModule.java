@@ -121,7 +121,7 @@ public class MainModule {
         boolean success = service.removeArtwork(artworkID);
         System.out.println(success ? "Artwork removed successfully." : "Failed to remove artwork.");
     }
-
+       /* retrieves */
     private static void getArtworkById(VirtualArtGalleryImpl service, Scanner scanner) {
         System.out.print("Enter Artwork ID: ");
         int artworkID = scanner.nextInt();

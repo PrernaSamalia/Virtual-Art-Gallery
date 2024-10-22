@@ -8,7 +8,7 @@ import exception.myexceptions.*;
 
 public interface IVirtualArtGallery {
     
-    // Artwork Management
+    /************************************** Artwork Management **************************************/
     
     /**
      * Adds a new artwork to the gallery.
@@ -45,7 +45,7 @@ public interface IVirtualArtGallery {
      */
     List<Artwork> searchArtworks(String keyword);
     
-    // User Favorites
+    /***************************************  User Favorites ***************************************/
     
     /**
      * Adds an artwork to the user's favorites.
@@ -70,7 +70,7 @@ public interface IVirtualArtGallery {
      */
     List<Artwork> getUserFavoriteArtworks(int userId) throws UserNotFoundException;
 
-    // Gallery Management
+    /************************************** Gallery Management **************************************/
 
     /**
      * Adds a new gallery to the system.

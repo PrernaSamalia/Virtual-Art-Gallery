@@ -1,7 +1,13 @@
+-- Created the database 'virtualart'
 CREATE DATABASE IF NOT EXISTS `virtualart`;
 
+-- Switched to using the 'virtualart' database
 USE virtualart;
 
+
+/********************************************** Table Structure Definitions **********************************************/
+
+-- Created the 'Artwork' table
 CREATE TABLE Artwork (
     ArtworkID INT PRIMARY KEY,
     Title VARCHAR(255) NOT NULL,
@@ -13,6 +19,7 @@ CREATE TABLE Artwork (
     FOREIGN KEY (ArtistID) REFERENCES Artist(ArtistID) ON DELETE CASCADE
 );
 
+-- Created the 'Artist' table
 CREATE TABLE Artist (
     ArtistID INT PRIMARY KEY,
     Name VARCHAR(100) NOT NULL,
@@ -23,6 +30,7 @@ CREATE TABLE Artist (
     ContactInformation VARCHAR(255) UNIQUE
 );
 
+-- Created the 'User' table
 CREATE TABLE User (
     UserID INT PRIMARY KEY,
     Username VARCHAR(100) NOT NULL UNIQUE,
@@ -36,6 +44,7 @@ CREATE TABLE User (
     FOREIGN KEY (FavouriteArtworks) REFERENCES Artwork(ArtworkID) ON DELETE SET NULL
 );
 
+-- Created the 'Gallery' table
 CREATE TABLE Gallery (
     GalleryID INT PRIMARY KEY,
     Name VARCHAR(100) NOT NULL,

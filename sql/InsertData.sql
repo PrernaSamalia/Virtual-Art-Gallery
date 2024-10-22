@@ -1,3 +1,4 @@
+-- Switched to using the 'virtualart' database
 USE virtualart;
 
 -- Insert data into Artist table

@@ -254,13 +254,8 @@ public class VirtualArtGalleryImpl implements IVirtualArtGallery {
 
         String query = "DELETE FROM User_Favorite_Artwork WHERE UserID = ? AND ArtworkID = ?";
         
-<<<<<<< HEAD
-        try(PreparedStatement stmt = connection.prepareStatement(query))  {
-            
-=======
         try (PreparedStatement stmt = connection.prepareStatement(query)) {
 
->>>>>>> 532806ff31cd21192af16bc8c1322473d2bb4e50
             stmt.setInt(1, userId);
             stmt.setInt(2, artworkId);
             stmt.executeUpdate();

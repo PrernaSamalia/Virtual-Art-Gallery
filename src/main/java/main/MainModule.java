@@ -171,16 +171,16 @@ public class MainModule {
         boolean success = service.removeArtwork(artworkID);
         System.out.println(success ? "Artwork removed successfully." : "Failed to remove artwork.");
     }
-<<<<<<< HEAD
+//<<<<<<< HEAD
        /* retrieves */
-=======
+
 
     /**
      * Retrieves and displays an artwork by ID through user input.
      * @param service The gallery service to handle the operation.
      * @param scanner Scanner object to read user input.
     */
->>>>>>> 532806ff31cd21192af16bc8c1322473d2bb4e50
+// >>>>>>> 532806ff31cd21192af16bc8c1322473d2bb4e50
     private static void getArtworkById(VirtualArtGalleryImpl service, Scanner scanner) {
 
         System.out.print("Enter Artwork ID: ");
